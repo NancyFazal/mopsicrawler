@@ -44,4 +44,13 @@ class Seed_model extends Core_model
         $this->db->where('url', $seed_data['url']);
         $this->db->update($this->table_name, array('finished' => 1));
     }
+
+    /**
+     * Get all seed pages info
+     * @return mixed
+     */
+    public function get_seeds()
+    {
+        return $this->db->get($this->table_name)->result();
+    }
 }
