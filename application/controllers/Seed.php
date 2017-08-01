@@ -18,6 +18,9 @@ class Seed extends CI_Controller
         $this->load->library('grocery_CRUD');
     }
 
+    /**
+     * Seed page manager
+     */
     public function index()
     {
         try {

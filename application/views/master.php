@@ -41,12 +41,12 @@
 <?php $this->load->view('templates/footer') ?>
 
 <!-- Scripts -->
+<?php $this->load->view('templates/scripts') ?>
 <!-- Controller's custom scripts -->
 <?php if (isset($js_files)): ?>
     <?php foreach ($js_files as $file): ?>
         <script src="<?php echo $file; ?>"></script>
     <?php endforeach; ?>
 <?php endif; ?>
-<?php $this->load->view('templates/scripts') ?>
 </body>
 </html>

@@ -17,7 +17,7 @@ class Crawler extends CI_Controller
      * Number of pages to be crawl
      * each time the crawler runs
      */
-    const NO_OF_PAGES = 200;
+    const NO_OF_PAGES = 999999999;
 
     public function __construct()
     {

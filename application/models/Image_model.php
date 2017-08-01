@@ -19,7 +19,7 @@ class Image_model extends Core_model
 
 
     const MIN_WIDTH = 400;
-    const MAX_WIDTH = 400;
+    const MIN_HEIGHT = 400;
 
     protected $allowed_image_extension = array('jpg', 'jpeg', 'png');
     protected $allowed_aspect_ratios;
@@ -206,7 +206,7 @@ class Image_model extends Core_model
 
             // Only proceed further if image size is larger than 400px in each dimension and
             // follow standard photography aspect ratios
-            if (($width < self::MIN_WIDTH && $height < self::MAX_WIDTH)
+            if (($width < self::MIN_WIDTH && $height < self::MIN_HEIGHT)
                 || !in_array(floatval($width / $height), $this->allowed_aspect_ratios)
             ) {
                 unlink($filename);
@@ -215,7 +215,7 @@ class Image_model extends Core_model
 
             $this->filename = $imagePath['filename'];
             $this->hash = sha1($this->src);
-            $this->path = $filename;
+            $this->path = "/crawled/" . self::IMG_DIR . "/" . $this->source . "/" . $imagePath['filename'] . "." . $imagePath['extension'];
             $this->width = $width;
             $this->height = $height;
             $this->type = $imagePath['extension'];

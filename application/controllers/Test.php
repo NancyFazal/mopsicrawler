@@ -28,11 +28,13 @@ class Test extends CI_Controller
 
     public function main()
     {
-        $exif = $this->read_exif_data('E:\\Projects\\mopsicrawler\\testexif.jpg');
+        /*$exif = $this->read_exif_data('E:\\Projects\\mopsicrawler\\testexif.jpg');
         $rawData = $exif->getRawData();
         $latitude = isset($rawData['GPS:GPSLatitude']) ? $rawData['GPS:GPSLatitude'] : null;
         $longitude = isset($rawData['GPS:GPSLongitude']) ? $rawData['GPS:GPSLongitude'] : null;
-        $this->determine_location($latitude, $longitude);
+        $this->determine_location($latitude, $longitude);*/
+        $images = $this->db->get('images')->result_array();
+        echo count($images);
     }
 
     /**

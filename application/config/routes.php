@@ -54,5 +54,6 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;*/
 
 $route['seed'] = 'seed/index';
+$route['gallery'] = 'gallery/index';
 /*$route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';*/
