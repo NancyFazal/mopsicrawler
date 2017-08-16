@@ -162,6 +162,21 @@ class Image_model extends Core_model
     }
 
     /**
+     * Get a random image from the database
+     * @return mixed
+     */
+    public function get_random_image()
+    {
+        $image = $this->db->query("
+            SELECT * FROM {$this->table_name}
+            ORDER BY RAND()
+            LIMIT 1
+        ")->result();
+
+        return $image[0];
+    }
+
+    /**
      * Save physical image file to server storage
      * @return string
      */

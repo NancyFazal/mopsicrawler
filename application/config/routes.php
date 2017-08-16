@@ -55,5 +55,8 @@ $route['translate_uri_dashes'] = FALSE;*/
 
 $route['seed'] = 'seed/index';
 $route['gallery'] = 'gallery/index';
+$route['verifier'] = 'verifier/index';
+$route['verifier/verify'] = 'verifier/verify';
+$route['verifier/verify/(:num)'] = 'verifier/verify/$1';
 /*$route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';*/

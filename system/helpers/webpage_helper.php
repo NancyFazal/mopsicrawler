@@ -39,7 +39,7 @@ if (!function_exists('extract_texts')) {
         /** @var DOMElement $meta */
         foreach ($metas as $meta) {
             if ($meta->getAttribute('name') === 'description') {
-                $text .= str_replace("\n", " ", strip_tags($meta->getAttribute('content'))) . " ";
+                $text .= preg_replace("/[\W]+/", " ", strip_tags($meta->getAttribute('content'))) . " ";
                 break;
             }
         }
@@ -49,7 +49,7 @@ if (!function_exists('extract_texts')) {
             if ($elements->length > 0) {
                 /** @var DOMElement $element */
                 foreach ($elements as $element) {
-                    $text .= str_replace("\n", " ", strip_tags($element->textContent));
+                    $text .= preg_replace("/[\W]+/", " ", strip_tags($element->textContent)) . " ";
                 }
             }
         }
