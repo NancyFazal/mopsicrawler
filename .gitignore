@@ -19,3 +19,4 @@ application/logs/*
 crawled/images/*
 !crawled/images/dummy
 application/config/database.php
+application/config/config.php
